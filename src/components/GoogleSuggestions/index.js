@@ -5,8 +5,14 @@ import SuggestionItem from '../SuggestionItem'
 class GoogleSuggestions extends Component {
   state = {searchInput: ''}
 
-  btnClick = (id, suggestion) => {
+  btnClick = suggestion => {
     this.setState({searchInput: suggestion})
+  }
+
+  onChangeSearchInput = event => {
+    this.setState({
+      searchInput: event.target.value,
+    })
   }
 
   render() {
@@ -33,6 +39,7 @@ class GoogleSuggestions extends Component {
               placeholder="Search Google"
               className="input"
               value={searchInput}
+              onChange={this.onChangeSearchInput}
             />
           </div>
 

@@ -2,9 +2,9 @@ import './index.css'
 
 const SuggestionItem = props => {
   const {obj, func} = props
-  const {id, suggestion} = obj
+  const {suggestion} = obj
   const arrowClick = () => {
-    func(id, suggestion)
+    func(suggestion)
   }
   return (
     <li className="listCont">
